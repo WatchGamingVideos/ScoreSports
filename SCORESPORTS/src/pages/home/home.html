@@ -1,0 +1,92 @@
+<ion-header>
+  <!-- Adds the side menu functionality-->
+  <ion-navbar style="background-color:rgba(180, 180, 180, 0.5)" >
+    <button ion-button menuToggle>
+      <ion-icon name="menu" color="danger"></ion-icon>
+    </button>
+    <ion-title>Welcome to</ion-title>
+<link href="https://fonts.googleapis.com/css?family=Sigmar+One" rel="stylesheet">
+
+  </ion-navbar>
+</ion-header>
+
+  <ion-content class="bg-style">
+    <div text-center>
+      <h3 class="my-label" ion-text color= "danger" >SCORESPORTS  </h3>
+
+    </div>
+
+
+
+
+    <div class="w3-display-container w3-animate-opacity">
+      <img src=	"assets/imgs/stadium.jpg" alt="boat" class="w3-card-*" style="width:100%;min-height:200px;max-height:600px;">
+
+    </div>
+
+
+
+
+
+
+    <div class="w3-container w3-padding-64 w3-center" id="team">
+
+      <div text-center>
+        <h2 ion-text style="color:gold">LEAGUES</h2>
+        <p ion-text style="color:Khaki ">Choose your league</p>
+      </div>
+
+
+
+
+
+
+
+      <div text-center class="w3-row"><br>
+
+        <div class="w3-quarter w3-center" >
+          <!-- image that goes to  the La Liga table page when clicked-->
+          <img src=	"https://www.thesportsdb.com/images/media/league/badge/7onmyv1534768460.png" alt="Boss"  style="width:45%" (click) = "GoToLaLiga()" img align="right" class="w3-circle w3-hover-opacity">
+          <!-- adds spacing between images-->
+          <h3></h3>
+          <p></p>
+        </div>
+
+        <div class="w3-quarter w3-center">
+          <!-- image that goes to  the Bundesliga table page when clicked-->
+          <img src="https://www.thesportsdb.com/images/media/league/badge/0j55yv1534764799.png" alt="Boss" class="center" style="width:45%" class="center" (click) = "GoToBundesliga()" class="w3-circle w3-hover-opacity">
+          <!-- adds spacing between images-->
+          <h3></h3>
+          <p></p>
+        </div>
+
+        <div class="w3-quarter">
+          <!-- image that goes to  the Serie A table page when clicked-->
+          <img src="https://www.thesportsdb.com/images/media/league/badge/mmd1de1541938367.png" alt="Boss"  style="width:45%" (click) = "GoToSerieA()" img align="right" class="w3-circle w3-hover-opacity">
+          <!-- adds spacing between images-->
+          <h3></h3>
+          <p></p>
+        </div>
+
+        <div class="w3-quarter">
+          <!-- image that goes to  the Premier League table page when clicked-->
+          <img src="https://www.thesportsdb.com/images/media/league/badge/xyrpuy1467456595.png" alt="Boss" class="center" style="width:40% " (click) = "GoToPremierLeague()" class="w3-circle w3-hover-opacity" >
+          <!-- adds spacing between images-->
+          <h3></h3>
+          <p></p>
+        </div>
+
+
+        <button  ion-button  color="danger" align = "center" (click) = "GoToLive()">LIVE SCORES</button>
+
+
+
+
+
+
+      </div>
+    </div>
+
+
+
+  </ion-content>

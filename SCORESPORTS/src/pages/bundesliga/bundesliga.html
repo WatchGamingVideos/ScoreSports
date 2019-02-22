@@ -1,0 +1,124 @@
+<ion-header>
+  <!-- Adds the side menu functionality-->
+  <ion-navbar >
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title >Bundesliga Table</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+
+  <ion-list>
+    <ion-item style="background-color:rgba(255, 0, 0, 0.5)">
+      <ion-grid >
+
+        <ion-row>
+          <ion-col col-6>
+            <div text-left>
+              <h3 text-uppercase ><B text-wrap>CLUB</B></h3>
+            </div>
+          </ion-col>
+          <ion-col>
+            <div>
+              <h3 text-uppercase><B text-wrap>MP</B></h3>
+            </div>
+          </ion-col>
+          <ion-col>
+            <div>
+              <h3 text-uppercase><B text-wrap>W</B></h3>
+            </div>
+          </ion-col>
+          <ion-col>
+            <div>
+              <h3 text-uppercase><B text-wrap>D</B></h3>
+            </div>
+          </ion-col>
+          <ion-col>
+            <div>
+              <h3 text-uppercase><B text-wrap>L</B></h3>
+            </div>
+          </ion-col>
+          <ion-col>
+            <div>
+              <h3 text-uppercase><B text-wrap>Pts</B></h3>
+            </div>
+          </ion-col>
+        </ion-row>
+
+      </ion-grid>
+    </ion-item>
+    <!--
+      goes through each itteration of BLTeams
+      BLTeams is assigned a new name team
+      {{team.JSONid}} outputs the information of each JSONid found in the API responce
+      -->
+    <ion-item  color="dark" *ngFor="let team of BLTeams" >
+      <ion-grid>
+
+        <ion-row>
+          <ion-col col-6>
+            <div text-left>
+              <p text-uppercase ><B text-wrap>{{team.name}}</B></p>
+            </div>
+          </ion-col>
+          <ion-col>
+            <div>
+              <p text-uppercase><B text-wrap>{{team.played}}</B></p>
+            </div>
+          </ion-col>
+          <ion-col>
+            <div>
+              <p text-uppercase><B text-wrap>{{team.win}}</B></p>
+            </div>
+          </ion-col>
+          <ion-col>
+            <div>
+              <p text-uppercase><B text-wrap>{{team.draw}}</B></p>
+            </div>
+          </ion-col>
+          <ion-col>
+            <div>
+              <p text-uppercase><B text-wrap>{{team.loss}}</B></p>
+            </div>
+          </ion-col>
+          <ion-col>
+            <div>
+              <p text-uppercase><B text-wrap>{{team.total}}</B></p>
+            </div>
+          </ion-col>
+        </ion-row>
+
+      </ion-grid>
+    </ion-item>
+
+  <ion-item color="dark">
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <div>
+            <!-- button that goes to the next 15 bundesliga matches page when clicked-->
+            <button  ion-button  color="dark" align = "center" (click) = "GoToNext15BLMatches()">Next 15 Bundesliga Matches</button>
+          </div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-item>
+  <ion-item color="dark">
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <div>
+            <!-- button that goes to  the last 15 bundesliga matches page when clicked-->
+            <button  ion-button  color="dark" align = "center" (click) = "GoToLast15BLMatches()">Last 15 Bundesliga Matches</button>
+          </div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-item>
+</ion-list>
+
+</ion-content>

@@ -1,0 +1,95 @@
+<ion-header>
+  <!-- Adds the side menu functionality-->
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Last 15 Matches</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content>
+
+
+    <ion-list>
+      <ion-item style="background-color:rgba(255, 0, 0, 0.5)">
+        <ion-grid  >
+
+          <ion-row >
+
+            <ion-col>
+              <div text-center>
+                <h3 text-uppercase><B text-wrap>Home</B></h3>
+              </div>
+            </ion-col>
+            <ion-col>
+              <div text-center>
+                <h3 text-uppercase><B text-wrap>VS</B></h3>
+              </div>
+            </ion-col>
+            <ion-col>
+              <div text-center>
+                <h3 text-uppercase><B text-wrap>Away</B></h3>
+              </div>
+            </ion-col>
+          </ion-row>
+
+        </ion-grid>
+      </ion-item >
+      <!--
+        goes through each itteration of Last15LLMatches
+        Last15LLMatches is assigned a new name team
+        {{team.JSONid}} outputs the information of each JSONid found in the API responce
+        -->
+      <ion-item  color="dark" *ngFor="let team of Last15LLMatches" >
+        <ion-grid>
+
+          <ion-row>
+            <ion-col text-left>
+              <div>
+                <p><B text-wrap>{{team.strHomeTeam}}</B></p>
+              </div>
+              </ion-col>
+
+              <ion-col col-4  text-center>
+              <div>
+                <p><B text-wrap>VS</B></p>
+              </div>
+              </ion-col>
+
+              <ion-col text-right>
+              <div>
+                <p><B text-wrap>{{team.strAwayTeam}}</B></p>
+              </div>
+              </ion-col>
+          </ion-row>
+
+          <ion-row>
+            <ion-col text-left>
+              <div >
+                <p text-wrap>{{team.intHomeScore}}</p>
+              </div>
+              </ion-col>
+
+              <ion-col text-right>
+              <div>
+                <p text-wrap>{{team.intAwayScore}}</p>
+              </div>
+              </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col text-center>
+              <div >
+                <p text-wrap>Date: {{team.strDate}}</p>
+              </div>
+              </ion-col>
+          </ion-row>
+
+
+        </ion-grid>
+      </ion-item>
+    </ion-list>
+
+
+</ion-content>

@@ -1,0 +1,89 @@
+<ion-header>
+  <!-- Adds the side menu functionality-->
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Live Score</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+
+
+    <ion-list>
+      <ion-item style="background-color:rgba(255, 0, 0, 0.5)">
+        <ion-grid  >
+
+          <ion-row >
+
+            <ion-col>
+              <div text-left>
+                <h3 text-uppercase><B text-wrap>Home</B></h3>
+              </div>
+            </ion-col>
+            <ion-col>
+              <div text-center>
+                <h3 text-uppercase><B text-wrap>VS</B></h3>
+              </div>
+            </ion-col>
+            <ion-col>
+              <div text-right>
+                <h3 text-uppercase><B text-wrap>Away</B></h3>
+              </div>
+            </ion-col>
+          </ion-row>
+
+        </ion-grid>
+      </ion-item >
+      <!--
+        goes through each itteration of Live
+        Live is assigned a new name team
+        {{team.JSONid}} outputs the information of each JSONid found in the API responce
+        -->
+      <ion-item  color="dark" *ngFor="let team of Live" >
+        <ion-grid>
+
+          <ion-row>
+            <ion-col text-left>
+              <div>
+                <p><B text-wrap>{{team.HomeTeam}}</B></p>
+              </div>
+              </ion-col>
+
+              <ion-col col-4  text-center>
+              <div>
+                <p><B text-wrap>{{team.Time}}</B></p>
+              </div>
+              </ion-col>
+
+              <ion-col text-right>
+              <div>
+                <p><B text-wrap>{{team.AwayTeam}}</B></p>
+              </div>
+              </ion-col>
+          </ion-row>
+
+          <ion-row>
+            <ion-col text-left>
+              <div >
+                <p text-wrap>{{team.HomeGoals}}</p>
+              </div>
+              </ion-col>
+
+              <ion-col text-right>
+              <div>
+                <p text-wrap>{{team.AwayGoals}}</p>
+              </div>
+              </ion-col>
+          </ion-row>
+
+
+        </ion-grid>
+      </ion-item>
+    </ion-list>
+
+
+</ion-content>
